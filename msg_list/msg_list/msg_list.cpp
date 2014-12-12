@@ -68,10 +68,10 @@ int _tmain( int argc, _TCHAR* argv[])
 	/* @peterg create messages */
 	//std::vector<std::string> out;
 	//out.reserve( tenantCount * vMsgTplList.size());
-
-	while ( tenantCount--)
+	int id = 0;
+	while ( id < tenantCount)
 	{
-		std::string tenantStr = "TD" + std::to_string( tenantCount);
+		std::string tenantStr = "TD" + std::to_string( id);
 		std::for_each( vMsgTplList.begin(), vMsgTplList.end(), [ tenantStr, &ofs]( std::string s)
 		{
 			std::string::size_type f = s.find( "TD");
