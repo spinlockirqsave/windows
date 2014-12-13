@@ -1,15 +1,15 @@
 :: @peterg
-:: This script search ipv4 interfaces for something named "Local(...)"
-:: (we make the assumption this is Local Area Connection) and sets ARP
-:: basereachable timeout to parameter passed into script or asks the user
-:: to specify multiplier and sets basereachable to multiplier*15000 in case
-:: parameter is not passed
+:: This script searches ipv4 interfaces for something named "Local(...)"
+:: (we make the assumption that this is Local Area Connection) and sets ARP
+:: basereachable timeout of this interface to parameter passed into the script
+:: or asks the user to specify multiplier and sets basereachable to multiplier*15000
+:: in case parameter is not passed
 
-:: BaseReachable time which manages expiration of ARP entries in local host ARP table.
+:: BaseReachable time manages expiration of ARP entries in local host ARP table.
 :: Windows generates random number between 0.5 - 1.5 and sets this expiration time to be
 :: the number*BaseReachable milliseconds. Some our machines talks to 20-40 other machines
 :: (maybe more, I don't know) and default for Windows 7 is set to 30s, so most machines
-:: will ask for records about every minutes, which generates a lot of traffic.
+:: will ask for records about every 30s (+-15s), which generates a lot of traffic.
 
 SETLOCAL
 @ECHO OFF
